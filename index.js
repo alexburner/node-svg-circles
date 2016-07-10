@@ -24,7 +24,7 @@ let centerY = height / 2;
 
 
 //
-// Drawing
+// Draw circles
 let svg = new SVG(width, height, strokeColor, strokeWidth, fillColor);
 
 svg.writeRect({
@@ -44,7 +44,7 @@ Flower
 
 
 //
-// Output
+// Write to filesystem
 let output = svg.toString();
 let fs = require(`fs`);
 let exec = require('child_process').exec;
