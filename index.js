@@ -46,9 +46,6 @@ Flower
 //
 // Output
 let output = svg.toString();
-
-console.log(output);
-
 let fs = require(`fs`);
 let exec = require('child_process').exec;
 let destinationSVG = `${__dirname}/test.svg`;
