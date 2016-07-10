@@ -10,7 +10,7 @@ module.exports.makeCircles = (centerX, centerY, radius, rings, twist) => {
     let queue = [];
 
     function addCircle(point) {
-        if (count + 1 > limit) return;
+        if (count === limit) return;
         let cx = point[0];
         let cy = point[1];
         let id = `${cx},${cy}`;
