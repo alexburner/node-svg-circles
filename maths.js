@@ -11,6 +11,7 @@ module.exports = class Maths {
     }
 
     static rotatePoint (point, origin, angle) {
+        // via http://stackoverflow.com/a/17411276/3717556
         let x = point[0];
         let y = point[1];
         let ox = origin[0];
