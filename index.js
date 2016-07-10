@@ -10,7 +10,7 @@ let Flower = require('./flower');
 //
 // Settings
 let strokeWidth = 1;
-let strokeColor = 'black';
+let strokeColor = 'blue';
 let fillColor = 'white';
 let radius = 40;
 let rings = 60;
@@ -46,6 +46,9 @@ Flower
 //
 // Output
 let output = svg.toString();
+
+console.log(output);
+
 let fs = require(`fs`);
 let exec = require('child_process').exec;
 let destinationSVG = `${__dirname}/test.svg`;

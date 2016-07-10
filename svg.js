@@ -1,8 +1,10 @@
 'use strict';
 
+let unspace = string => string.replace(/\s\s+/g, ' ').trim();
+
 module.exports = class SVG {
     constructor (width, height, strokeColor, strokeWidth, fillColor) {
-        this.open = `
+        this.open = unspace(`
             <svg
                 x="0"
                 y="0"
@@ -12,21 +14,21 @@ module.exports = class SVG {
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
             >
-        `;
+        `);
         this.content = '';
         this.close = '</svg>';
-        this.circleStyle = `
+        this.circleStyle = unspace(`
             style="
                 fill:transparent;
                 stroke:${strokeColor};
                 stroke-width:${strokeWidth}
             "
-        `;
-        this.rectStyle = `
+        `);
+        this.rectStyle = unspace(`
             style="
                 fill:${fillColor};
             "
-        `;
+        `);
     }
 
     toString() {
@@ -34,18 +36,18 @@ module.exports = class SVG {
     }
 
     writeCircle(circle) {
-        this.content += `
+        this.content += unspace(`
             <circle
                 cx="${circle.cx}"
                 cy="${circle.cy}"
                 r="${circle.r}"
                 ${this.circleStyle}
             />
-        `;
+        `);
     }
 
     writeRect(rect) {
-        this.content += `
+        this.content += unspace(`
             <rect
                 x="${rect.x}"
                 y="${rect.y}"
@@ -53,6 +55,6 @@ module.exports = class SVG {
                 height="${rect.h}"
                 ${this.rectStyle}
             />
-        `;
+        `);
     }
 }
